@@ -8,6 +8,7 @@ class ExamIndexView(viewsets.ModelViewSet):
     queryset = ExamIndex.objects.all()
     serializer_class = ExamIndexSerializer
     
+    
 class ExamDetailsView(viewsets.ModelViewSet):
     queryset = ExamDetails.objects.all()
     serializer_class = ExamDetailsSerializer

@@ -8,5 +8,5 @@ router.register('exam-index', ExamIndexView)
 router.register('exam-details', ExamDetailsView)
 
 urlpatterns=[
-    path('              ', include(router.urls))
+    path('', include(router.urls)),
 ]
