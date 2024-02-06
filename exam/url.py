@@ -5,7 +5,7 @@ from .views import ExamDetailsView, ExamIndexView
 
 router = DefaultRouter()
 router.register('exam-index', ExamIndexView)
-router.register('exam-details', ExamDetailsView)
+router.register('exam-detail', ExamDetailsView)
 
 urlpatterns=[
     path('', include(router.urls)),

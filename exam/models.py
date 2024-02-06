@@ -13,7 +13,7 @@ class ExamIndex(models.Model):
     
     
 
-class ExamDetails(models.Model):
+class ExamDetail(models.Model):
     index=models.ForeignKey(ExamIndex,on_delete=models.CASCADE)
     description=models.TextField()
     syallabus=models.TextField()
