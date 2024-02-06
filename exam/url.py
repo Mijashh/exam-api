@@ -4,9 +4,9 @@ from rest_framework.routers import DefaultRouter
 from .views import ExamDetailsView, ExamIndexView
 
 router = DefaultRouter()
-router.register('exam-index', ExamIndexView)
-router.register('exam-detail', ExamDetailsView)
+router.register("exam-index", ExamIndexView)
+router.register("exam-detail", ExamDetailsView)
 
-urlpatterns=[
-    path('', include(router.urls)),
+urlpatterns = [
+    path("", include(router.urls)),
 ]
