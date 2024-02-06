@@ -1,18 +1,18 @@
-from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-
+from rest_framework import filters, viewsets
 from .models import ExamDetail, ExamIndex
 from .serializers import ExamDetailsSerializer, ExamIndexSerializer
 
 
-class ExamIndexView(viewsets.ModelViewSet):
+class ExamIndexView(viewsets.ReadOnlyModelViewSet):
     queryset = ExamIndex.objects.all()
     serializer_class = ExamIndexSerializer
     lookup_field = "slug"
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    search_fields = ["name", "university"]
+    ordering_fields = ["date"]
 
 
-class ExamDetailsView(viewsets.ModelViewSet):
+class ExamDetailsView(viewsets.ReadOnlyModelViewSet):
     queryset = ExamDetail.objects.all()
     serializer_class = ExamDetailsSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
     lookup_field = "index__slug"
