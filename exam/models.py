@@ -5,6 +5,7 @@ class ExamIndex(models.Model):
     name = models.CharField(max_length=200)
     university = models.CharField(max_length=100)
     date = models.DateField()
+    stream = models.CharField(max_length=100)
     slug = models.SlugField(blank=True, unique=True)
 
     def __str__(self):
