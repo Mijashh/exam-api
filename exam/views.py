@@ -11,12 +11,12 @@ class ExamIndexView(viewsets.ReadOnlyModelViewSet):
     lookup_field = "slug"
     filter_backends = [
         filters.SearchFilter,
-        filters.OrderingFilter,
         DjangoFilterBackend,
+        filters.OrderingFilter,
     ]
     search_fields = {"name": ["iexact"]}
-    ordering_fields = ["date"]
     filterset_fields = {"stream": ["iexact"], "university": ["iexact"]}
+    ordering_fields = ["date"]
 
 
 class ExamDetailsView(viewsets.ReadOnlyModelViewSet):
