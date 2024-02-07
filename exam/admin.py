@@ -11,7 +11,7 @@ class ExamDetailsInline(admin.StackedInline):
 
 class ExamIndexAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {"fields": ["name", "slug", "university", "date"]}),
+        (None, {"fields": ["name", "slug", "university","stream", "date"]}),
     ]
     prepopulated_fields = {
         "slug": ("name",),
