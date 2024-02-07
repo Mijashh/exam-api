@@ -14,9 +14,9 @@ class ExamIndexView(viewsets.ReadOnlyModelViewSet):
         filters.OrderingFilter,
         DjangoFilterBackend,
     ]
-    search_fields = ["name"]
+    search_fields = {"name": ["iexact"]}
     ordering_fields = ["date"]
-    filterset_fields = ["stream"]
+    filterset_fields = {"stream": ["iexact"], "university": ["iexact"]}
 
 
 class ExamDetailsView(viewsets.ReadOnlyModelViewSet):
