@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "exam",
     "rest_framework",
     "django_filters",
+    "rest_framework.authtoken",
 ]
 
 REST_FRAMEWORK = {
