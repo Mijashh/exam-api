@@ -3,7 +3,10 @@ from rest_framework import filters, viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import ExamDetail, ExamIndex
-from .serializers import ExamDetailsSerializer, ExamIndexSerializer
+from .serializers import (
+    ExamDetailsSerializer,
+    ExamIndexSerializer,
+)
 
 
 class ExamIndexView(viewsets.ModelViewSet):
