@@ -42,19 +42,17 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_filters",
     "rest_framework.authtoken",
+    "djoser",
 ]
 
 REST_FRAMEWORK = {
-    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"]
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication'],
 }
-TEMPLATES = [
-    {
-        "DIRS": [
-            os.path.join(
-                BASE_DIR, "templates"
-            ),  # Add your custom template directory here
-        ],
-    },
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Default authentication backend
 ]
 
 
@@ -73,7 +71,11 @@ ROOT_URLCONF = "exam_api.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            os.path.join(
+                BASE_DIR, "templates"
+            ),  # Add your custom template directory here
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
